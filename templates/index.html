@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>ML Opensource Projects</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+      h1,
+      h2,
+      h3 {
+        margin-top: 8vh;
+        font-weight: 400;
+        color: antiquewhite;
+        align-content: center;
+        vertical-align: 200px;
+      }
+      h1.lg-heading,
+      h2.lg-heading,
+      h3.lg-heading {
+        color: #88aaf5;
+        margin-top: 30vh;
+        font-size: 5rem;
+      }
+      h1.sm-heading,
+      h2.sm-heading,
+      h3.sm-heading {
+        margin-bottom: 3rem;
+        padding: 0.2rem 1rem;
+        background: rgba(73, 73, 73, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/index">ML Open Source Proejcts</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/index">Home</a></li>
+          <li><a href="/img_classifier">Image Classifiers</a></li>
+          <li><a href="/linear">Linear Regression</a></li>
+          <li><a href="/deepl">Decision Trees</a></li>
+        </ul>
+      </div>
+    </nav>
+    <h1 class="lg-heading">ML Opensource Projects</h1>
+    <h2 class="sm-heading">
+      Once open source gets good enough, competing with it would be insane.<br /><br />
+
+      - Larry Ellison
+    </h2>
+  </body>
+</html>
