@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title>ML Opensource Projects</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../static/js/main.js"></script>
+
+    <style>
+      .mnist_classifier {
+        background-color: gainsboro;
+        margin-left: 30px;
+        width: 95%;
+        height: 300px;
+      }
+
+      .img_pre {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/index">ML Open Source Proejcts</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/index">Home</a></li>
+          <li><a href="/img_classifier">Image Classifiers</a></li>
+          <li><a href="/linear">Linear Regression</a></li>
+          <li><a href="/deepl">Decision Trees</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="mnist_classifier">
+      <h1 style="color: #344364">MNIST Classifier</h1>
+
+      Contributed by:
+      <a href="https://github.com/JayeshShelar">Jayesh Shelar</a>
+
+      <form
+        method="POST"
+        action="{{url_for('mnist')}}"
+        enctype="multipart/form-data"
+      >
+        <img class="img_pre" id="blah" /><br /><br />
+        <input
+          class="input--style-3"
+          type="file"
+          placeholder="Upload Digit"
+          name="nm"
+          accept=".png, .jpg, .jpeg"
+          onchange="readURL(this);"
+        />
+
+        <input type="submit" , value="Predict" />
+        <br />
+        <br />
+        Result {{ res }}
+      </form>
+    </div>
+    <div class="mnist_classifier">
+      <h1 style="color: #344364">Cat and Dog Classifier(Not Implemented)</h1>
+      <form method="POST" enctype="multipart/form-data">
+        <img class="img_pre" id="blah" /><br /><br />
+        <input
+          class="input--style-3"
+          type="file"
+          placeholder="Upload Digit"
+          name="nm"
+          accept=".png, .jpg, .jpeg"
+          onchange="readURL(this);"
+        />
+
+        <br />
+        <br />
+        Result
+      </form>
+    </div>
+  </body>
+</html>

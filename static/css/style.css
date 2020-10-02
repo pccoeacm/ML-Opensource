@@ -1,0 +1,13 @@
+body {
+  color: black;
+  background-image: url("../images/home_page.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
+}
+
+.container-fluid {
+  font-size: larger;
+  font-size-adjust: inherit;
+}
