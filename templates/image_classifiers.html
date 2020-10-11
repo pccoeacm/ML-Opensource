@@ -16,8 +16,8 @@
       .mnist_classifier {
         background-color: gainsboro;
         margin-left: 30px;
-        width: 95%;
-        height: 300px;
+        width: 50%;
+        height: 320px;
       }
 
       .img_pre {
@@ -35,7 +35,7 @@
         <ul class="nav navbar-nav">
           <li><a href="/index">Home</a></li>
           <li><a href="/img_classifier">Image Classifiers</a></li>
-          <li><a href="/linear">Linear Regression</a></li>
+          <li><a href="/linear_reg">Linear Regression</a></li>
           <li><a href="/deepl">Decision Trees</a></li>
         </ul>
       </div>
@@ -46,11 +46,7 @@
       Contributed by:
       <a href="https://github.com/JayeshShelar">Jayesh Shelar</a>
 
-      <form
-        method="POST"
-        action="{{url_for('mnist')}}"
-        enctype="multipart/form-data"
-      >
+      <form method="POST" action="/mnist_predict" enctype="multipart/form-data">
         <img class="img_pre" id="blah" /><br /><br />
         <input
           class="input--style-3"
@@ -60,8 +56,8 @@
           accept=".png, .jpg, .jpeg"
           onchange="readURL(this);"
         />
-
-        <input type="submit" , value="Predict" />
+        <br />
+        <input type="submit" class="btn btn-success" value="Predict" />
         <br />
         <br />
         Result {{ res }}
