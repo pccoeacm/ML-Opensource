@@ -14,8 +14,8 @@
       .linear_reg {
         background-color: gainsboro;
         margin-left: 30px;
-        width: 95%;
-        height: 300px;
+        width: 50%;
+        height: 400px;
       }
     </style>
   </head>
@@ -28,13 +28,45 @@
         <ul class="nav navbar-nav">
           <li><a href="/index">Home</a></li>
           <li><a href="/img_classifier">Image Classifiers</a></li>
-          <li><a href="/linear">Linear Regression</a></li>
+          <li><a href="/linear_reg">Linear Regression</a></li>
           <li><a href="/deepl">Decision Trees</a></li>
         </ul>
       </div>
     </nav>
     <div class="linear_reg">
-      <h1 style="color: #344364">{Linear Reg Problem}</h1>
+      <h1 style="color: #344364">Score Predictor</h1>
+
+      Contributed by:
+      <a href="https://github.com/rutujanemane">Rutuja Nemane</a><br /><br />
+
+      <form method="POST" action="/score_pred" enctype="multipart/form-data">
+        <label for="">Hours of study per day: </label>
+        <input
+          type="number"
+          class="form-control"
+          name="hours0"
+          min="0"
+          max="24"
+          step="0.01"
+          required
+        />
+        <h6>(Hours should be within 0 and 24)</h6>
+        <br />
+        <label for="">What is your score goal?: </label>
+        <input
+          type="number"
+          class="form-control"
+          name="goal"
+          min="0"
+          max="100"
+          step="0.01"
+          required
+        />
+        <h6>(In percentage)</h6>
+        <br />
+        <input type="submit" class="btn btn-success" value="Predict" />
+        <h4>{{res_msg}}</h4>
+      </form>
     </div>
   </body>
 </html>

@@ -32,8 +32,8 @@ def img_classifier():
     return render_template("image_classifiers.html")
 
 
-@app.route('/linear')
-def linear():
+@app.route('/linear_reg')
+def linear_reg():
     return render_template("linear_reg.html")
 
 
@@ -53,7 +53,7 @@ def mnist():
         user = file.filename
 
         # load the model from disk
-        model_name = 'finalized_model2.sav'
+        model_name = 'Compressed-Models/finalized_model2.sav'
         loaded_model = cPickle.load(open(model_name, 'rb'))
 
         # preprocessing
@@ -105,6 +105,26 @@ def mnist():
         print("Predicted class is: ", test_pred)
 
         return render_template('image_classifiers.html', res=test_pred)
+
+
+@app.route('/score_pred', methods=['POST', 'GET'])
+def score_pred():
+    if request.method == 'POST':
+        model_name = 'Compressed-Models/model_lr.pkl'
+        ml = cPickle.load(open(model_name, 'rb'))
+        h0 = float(request.form.get('hours0'))
+        s0 = ml.predict([[h0]])
+        goal = float(request.form.get('goal'))
+        diff = goal-s0
+        #s0 = round(s0, 2)
+        #diff = round(diff, 2)
+        msg = ""
+        if diff > 0:
+            res_msg = "Sorry, not enough to reach your goal..Boost yourself! 💪"
+        else:
+            res_msg = "Great going!! Keep it up.."
+
+        return render_template("linear_reg.html", res_msg=res_msg)
 
 
 if __name__ == "__main__":
